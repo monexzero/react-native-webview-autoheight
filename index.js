@@ -76,6 +76,7 @@ export default class MyWebView extends Component {
         ref={(ref) => { this.webview = ref; }}
         injectedJavaScript={Platform.OS === 'ios' ? iosScript : androidScript}
         scrollEnabled={this.props.scrollEnabled || false}
+        scalesPageToFit={false}
         javaScriptEnabled={true}
         automaticallyAdjustContentInsets={true}
         {...this.props}
