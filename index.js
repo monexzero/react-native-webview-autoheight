@@ -21,17 +21,9 @@ import { WebView } from 'react-native-webview';
 import PropTypes from "prop-types";
 
 const injectedScript = function() {
-  function waitForBridge() {
-    if (window.postMessage.length !== 1){
-      setTimeout(waitForBridge, 200);
-    }
-    else {
-      postMessage(
-        Math.max(document.documentElement.clientHeight, document.documentElement.scrollHeight, document.body.clientHeight, document.body.scrollHeight)
-      )
-    }
-  }
-  waitForBridge();
+  window.ReactNativeWebView.postMessage(
+    Math.max(document.documentElement.clientHeight, document.documentElement.scrollHeight, document.body.clientHeight, document.body.scrollHeight)
+  )
 };
 
 export default class MyWebView extends Component {
