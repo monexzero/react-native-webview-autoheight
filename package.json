@@ -24,6 +24,5 @@
   },
   "homepage": "https://github.com/scazzy/react-native-webview-autoheight#readme",
   "dependencies": {
-    "react-native-webview": "^9.4.0"
   }
 }
